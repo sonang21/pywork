@@ -1,0 +1,1 @@
+slack-cleaner --token=xoxp-294011574325-293792089107-358100087443-f56a85f3cd937df3329539b23f4bb724 --message --channel airplane --bot --perform
