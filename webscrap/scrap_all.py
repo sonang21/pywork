@@ -313,14 +313,14 @@ while True:
     for scrap in function_list:
         for dt in plan_dates:
             scrap(dt)
-            loopWait(loopIntervalSec)
-            #time.sleep(loopIntervalSec)
+            #loopWait(loopIntervalSec)
+            time.sleep(loopIntervalSec)
             
     
     
     #break
     print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
-    loopWait(loopIntervalSec)
-    #time.sleep(loopIntervalSec)
+    #loopWait(loopIntervalSec)
+    time.sleep(loopIntervalSec)
     
 print("[%s] script end" % sys.argv[0])
