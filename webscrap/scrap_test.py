@@ -16,7 +16,6 @@ import slackweb
 import time
 import datetime
 import sys
-import configparser
 
 loopIntervalSec = 30
 plan_dates = [["2018-09-22", "2018-09-23"], ["2018-09-22", "2018-09-26"]]
@@ -29,13 +28,6 @@ options.add_argument("lang=ko_KR")
 ##options.add_argument('disable-gpu')
 options.add_argument("--disable-gpu")
 driver_path = 'chromedriver_win32\\chromedriver.exe'
-
-config = configparser.ConfigParser()
-config.read('config.ini')
-slack_url = config.get('slack', 't1')
-slack_url = slack_url + '/' + config.get('slack', 't2')
-slack_url = slack_url + '/' + config.get('slack', 't3')
-
 ####################################################################################################
 def file_save(file_name, file_content, file_option='w'):
     file = open(file_name, file_option, encoding='UTF-8')
@@ -44,8 +36,7 @@ def file_save(file_name, file_content, file_option='w'):
     
 def send_slack(msg):
     now = datetime.datetime.now()
-    #s = slackweb.Slack(url="https://hooks.slack.com/services/xx/xx/xx")
-    s = slackweb.Slack(url=slack_url)
+    s = slackweb.Slack(url="https://hooks.slack.com/services/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")
     s.notify(text = msg)
     
 def debug_sleep(msg, waitSec):
