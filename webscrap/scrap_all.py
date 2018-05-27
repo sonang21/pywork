@@ -195,6 +195,7 @@ def scrap_eastar(aDates):
         if bSendMsg:
             send_slack('\n'.join(slack_msg))
 
+        driver.close()
     except Exception as err:
         print("[Error at line %s ]********************" % sys.exc_info()[-1].tb_lineno)
         print(str(err))
@@ -205,7 +206,6 @@ def scrap_eastar(aDates):
     finally:
         print("[Finally]********************")
         #time.sleep(10)
-        driver.close()
         driver.quit()
         #file.close()
         
@@ -299,7 +299,8 @@ def scrap_jeju(aDates):
         print('Send Message; %s' % bBookable)
         if bBookable:
             send_slack('\n'.join(slack_msg))
-            
+
+        driver.close()
     except Exception as err:
         print("[Error at line %s ]********************" % sys.exc_info()[-1].tb_lineno)
         print(str(err))
@@ -310,7 +311,6 @@ def scrap_jeju(aDates):
     finally:
         print("[Finally]********************")
         #time.sleep(10)
-        driver.close()
         driver.quit()
 
 #####################################################################################
