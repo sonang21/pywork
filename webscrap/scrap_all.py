@@ -31,7 +31,8 @@ options.add_argument("--disable-gpu")
 driver_path = 'chromedriver_win32\\chromedriver.exe'
 
 config = configparser.ConfigParser()
-config.read('config.ini')
+config_file='config.ini'
+config.read(config_file)
 slack_url = config.get('slack', 't1')
 slack_url = slack_url + '/' + config.get('slack', 't2')
 slack_url = slack_url + '/' + config.get('slack', 't3')
@@ -326,15 +327,22 @@ function_list = [scrap_eastar, scrap_jeju]
 while True:
     for scrap in function_list:
         for dt in plan_dates:
+            config.read(config_file)
+            run_option = config.get('run', 'option')
+            if(run_option == 'stop'):
+                print("run:option is set to stop => quit program.")
+                #quit()
+                sys.exit(0)
+                
             scrap(dt)
             #loopWait(loopIntervalSec)
+            print("waiting for %d sec..." % loopIntervalSec)
             time.sleep(loopIntervalSec)
-            
-    
     
     #break
     print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     #loopWait(loopIntervalSec)
+    print("waiting for %d sec..." % loopIntervalSec)
     time.sleep(loopIntervalSec)
     
 print("[%s] script end" % sys.argv[0])
