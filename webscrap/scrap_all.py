@@ -342,7 +342,7 @@ while True:
     #break
     print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     #loopWait(loopIntervalSec)
-    print("waiting for %d sec..." % loopIntervalSec)
-    time.sleep(loopIntervalSec)
+    #print("waiting for %d sec..." % loopIntervalSec)
+    #time.sleep(loopIntervalSec)
     
 print("[%s] script end" % sys.argv[0])
