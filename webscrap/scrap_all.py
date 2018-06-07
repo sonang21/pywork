@@ -18,7 +18,7 @@ import datetime
 import sys
 import configparser
 
-loopIntervalSec = 30
+intervalSec = 30
 plan_dates = [["2018-09-22", "2018-09-25"], ["2018-09-22", "2018-09-26"]]
 #plan_dates = [["2018-09-01", "2018-09-28"], ["2018-09-22", "2018-09-26"]] ## for test
 
@@ -329,6 +329,7 @@ while True:
         for dt in plan_dates:
             config.read(config_file)
             run_option = config.get('run', 'option')
+            intervalSec = int(config.get('run', 'intervalSec'))
             if(run_option == 'stop'):
                 print("run:option is set to stop => quit program.")
                 #quit()
@@ -336,8 +337,8 @@ while True:
                 
             scrap(dt)
             #loopWait(loopIntervalSec)
-            print("waiting for %d sec..." % loopIntervalSec)
-            time.sleep(loopIntervalSec)
+            print("waiting for %d sec..." % intervalSec)
+            time.sleep(intervalSec)
     
     #break
     print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
