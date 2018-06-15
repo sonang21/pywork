@@ -1,1 +1,1 @@
-c:\2.MyDev\PyProjects\mssql
+c:\2.MyDev\PyWork\mssql

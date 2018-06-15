@@ -12,6 +12,7 @@ sample 1
 """)
 
 s = sched.scheduler(time.time, time.sleep)
+## 60초 * 20 : 20분
 vIntervalSec = 60 * 20
 id = 1
 

@@ -7,16 +7,19 @@ import datetime
 # user = getenv("PYMSSQL_TEST_USERNAME")
 # password = getenv("PYMSSQL_TEST_PASSWORD")
 #--------------------------------------------------------------------------------------------------
+# 수집 대상 시간(이전 20분)
 vIntervalMinutes = 20
 
-vServerMon   = 'localhost'
-vUserMon     = 'sa'
-vPasswordMon = 'dba1020'
-vDatabaseMon = 'DBMON'
+# Monitoring Repository
+vServerMon   = '100.100.100.195'
+vUserMon     = 'migadm'
+vPasswordMon = 'mig1020'
+vDatabaseMon = 'MIGTEST'
 
-vServerTarget = '100.100.100.164'
-vUserTarget = 'ngadmin'
-vPasswordTarget = '!Ad@NgTft#2017)'
+# Monitoring Target 
+vServerTarget = '100.100.100.195'
+vUserTarget = 'migadm'
+vPasswordTarget = 'mig1020'
 vDatabaseTarget = 'ELOC2001'
 
 #vServerTarget   = vServerMon
