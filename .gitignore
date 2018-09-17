@@ -1,0 +1,7 @@
+#.gitignore
+env/
+myvenv/
+djangos_bak/
+*_bak/
+config.ini
+*.log
